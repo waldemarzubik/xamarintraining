@@ -2,10 +2,11 @@
 using System.ComponentModel;
 using Android.App;
 using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
 
 namespace xamarintraining.Droid
 {
-    public abstract class ActivityBase<T> : Activity where T : INotifyPropertyChanged
+    public abstract class ActivityBase<T> : ActivityBase where T : INotifyPropertyChanged
     {
         protected T ViewModel { get; private set; }
 
