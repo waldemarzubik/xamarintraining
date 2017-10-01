@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Support.V7.Widget;
-using Android.Widget;
 
 namespace xamarintraining.Droid
 {
@@ -29,7 +27,6 @@ namespace xamarintraining.Droid
             _recyclerView.SetLayoutManager(new LinearLayoutManager
                                            (this, LinearLayoutManager.Vertical, false));
             _recyclerView.SetAdapter(new RecyclerAdapter(GetItems()));
-
 
             //_listView = FindViewById<ListView>(Resource.Id.listView);
             //_listView.Adapter = new ListAdapter(GetItems());

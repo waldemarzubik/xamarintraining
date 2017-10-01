@@ -16,23 +16,10 @@ namespace xamarintraining.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
             _button = FindViewById<Button>(Resource.Id.searchButton);
             _text = FindViewById<TextView>(Resource.Id.searchEditText);
-        }
-
-        protected override void OnStart()
-        {
-            base.OnStart();
-            _button.Click += _button_Click;
-        }
-
-        protected override void OnStop()
-        {
-            _button.Click -= _button_Click;
-            base.OnStop();
         }
 
         void _button_Click(object sender, System.EventArgs e)
