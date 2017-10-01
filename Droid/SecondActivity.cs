@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Android.App;
 using Android.Content;
 using Android.OS;
+using Android.Support.V7.Widget;
 using Android.Widget;
 
 namespace xamarintraining.Droid
@@ -11,7 +12,9 @@ namespace xamarintraining.Droid
     public class SecondActivity : Activity
     {
         private string _text;
-        private ListView _listView;
+        private RecyclerView _recyclerView;
+
+        //private ListView _listView;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -22,8 +25,14 @@ namespace xamarintraining.Droid
 
             _text = Intent.GetStringExtra(MainActivity.PARAM);
 
-            _listView = FindViewById<ListView>(Resource.Id.listView);
-            _listView.Adapter = new ListAdapter(GetItems());
+            _recyclerView = FindViewById<RecyclerView>(Resource.Id.recyclerView);
+            _recyclerView.SetLayoutManager(new LinearLayoutManager
+                                           (this, LinearLayoutManager.Vertical, false));
+            _recyclerView.SetAdapter(new RecyclerAdapter(GetItems()));
+
+
+            //_listView = FindViewById<ListView>(Resource.Id.listView);
+            //_listView.Adapter = new ListAdapter(GetItems());
         }
 
         private IList<Item> GetItems()
