@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    <TextView
+        android:id="@+id/searchLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search criteria:"
+        android:paddingBottom="10dp" />
+    <EditText
+        android:layout_below="@id/searchLabel"
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="type search criteria" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchButton"
+        android:layout_alignParentBottom="true"
+        android:text="Search" />
+</RelativeLayout>
