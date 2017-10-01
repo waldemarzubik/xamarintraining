@@ -2,13 +2,14 @@
 using Android.Widget;
 using Android.OS;
 using Android.Content;
+using xamarintraining.ViewModels.Interfaces;
+using GalaSoft.MvvmLight.Helpers;
 
 namespace xamarintraining.Droid
 {
     [Activity(Label = "xamarin training", MainLauncher = true, Icon = "@mipmap/icon", Exported = true)]
-    public class MainActivity : Activity
+    public class MainActivity : ActivityBase<IMainViewModel>
     {
-        public const string PARAM = "param";
         private Button _button;
         private TextView _text;
 
@@ -22,13 +23,12 @@ namespace xamarintraining.Droid
             _text = FindViewById<TextView>(Resource.Id.searchEditText);
         }
 
-        void _button_Click(object sender, System.EventArgs e)
+        protected override void OnCreateBindings()
         {
-            using (var intent = new Intent(this, typeof(SecondActivity)))
-            {
-                intent.PutExtra(PARAM, _text.Text);
-                StartActivity(intent);
-            }
+            this.SetBinding(() => ViewModel.SearchCriteria, () => _text.Text, BindingMode.TwoWay);
+            _button.SetCommand(ViewModel.ClickCommand);
+
+            base.OnCreateBindings();
         }
     }
 }

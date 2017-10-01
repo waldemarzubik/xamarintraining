@@ -8,6 +8,7 @@ namespace xamarintraining.Droid
         protected override INavigationService Configure()
         {
             var navigationService = new NavigationService();
+            navigationService.Configure(PageKeys.MAIN_VIEW, typeof(MainActivity));
             navigationService.Configure(PageKeys.SECOND_VIEW, typeof(SecondActivity));
 
             return navigationService;
