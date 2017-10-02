@@ -1,9 +1,8 @@
 ﻿using Android.App;
-using Android.Widget;
 using Android.OS;
-using Android.Content;
-using xamarintraining.ViewModels.Interfaces;
+using Android.Widget;
 using GalaSoft.MvvmLight.Helpers;
+using xamarintraining.ViewModels.Interfaces;
 
 namespace xamarintraining.Droid
 {
